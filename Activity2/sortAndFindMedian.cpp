@@ -2,12 +2,11 @@
 #include <vector>
 using namespace std;
 
-//bubble sort (O(N^2))
 void sort(vector<int> &numbers)
 {
     int n = numbers.size();
   
-    //implementing bubble sort  
+    //implementing bubble sort (O(N^2))
     for (int i = 0; i < n - 1; ++i)
     {
         for (int j = 0; j < n - i - 1; ++j)
@@ -29,11 +28,11 @@ double sortAndFindMedian(vector<int>& numbers)
     
     if(n % 2 == 0)  //IF n mod 2 == 0
     {
-        return (numbers[n / 2 - 1] + numbers[n / 2]) / 2.0;
+        return (numbers[n/2 - 1]+numbers[n/2])/2.0; //follows pseudocode
     }
     else
     {
-        return numbers[n / 2];
+        return numbers[n/2];  //follows pseudocode
     }
 }
 
@@ -50,13 +49,10 @@ int main()
 /*
 UNUSED CODE FUNCTIONS: (to demonstrate thought process later)
 
-
 void sort(vector<int> &numbers)
 {
     //quick select sort to find the median
-
 }
-
 
 /quick select (since we only want to select the median) (O(n))
 //quickselect partition:
@@ -103,5 +99,4 @@ int quickSelect(vector<int>& nums, int left, int right, int k)
         return quickSelect(nums, pivotIndex + 1, right, k);
     }
 }
-
 */
